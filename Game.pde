@@ -10,6 +10,7 @@ class Game {
 
   public void setupGame() {
     player = new Player(width / 2, height - 50, 30);
+    //lanes
     lanes = new ArrayList<Lane>();
     int laneHeight = 60;
     for (int y = height - 120; y >= 0; y -= laneHeight) {
