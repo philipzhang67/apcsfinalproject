@@ -3,11 +3,9 @@ class Game {
   private ArrayList<Lane> lanes;
   private int score;
   private boolean gameOver;
-
   public Game() {
     setupGame();
   }
-
   public void setupGame() {
     player = new Player(width / 2, height - 50, 30);
     //lanes
@@ -16,14 +14,12 @@ class Game {
     for (int y = height - 120; y >= 0; y -= laneHeight) {
       int direction;
       if (y / laneHeight % 2 = 0){
-        direction = 1;
+        direction = 1;}
       else{
         direction = -1;
       }
-
       float speed = random(2, 5);
-      Lane lane = new y(
-
+      CityLane lane = new CityLane(y, laneHeight, direction, speed);
   public void update() {
     if (!gameOver) {
       for (Lane lane : lanes) {
@@ -77,12 +73,10 @@ class Game {
   private void displayGameOver() {
     fill(0, 180);
     rect(0, 0, width, height);
-
     fill(255);
     textAlign(CENTER, CENTER);
     textSize(48);
     text("GAME OVER", width / 2, height / 2 - 40);
-
     textSize(24);
     text("Final Score: " + score, width / 2, height / 2 + 10);
     text("Press R to restart", width / 2, height / 2 + 50);
